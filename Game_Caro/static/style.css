@@ -1,0 +1,217 @@
+/* General Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Styling */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Room Container Styling */
+#room-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+#room-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#room-input:focus {
+    border-color: #3498db;
+}
+
+#room-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#room-container button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Game Info and Turn Text */
+#info, #turn {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Board Styling */
+#board {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dfe6e9;
+    background: #f7f9fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cell:hover {
+    background: #e0eafc;
+    transform: scale(1.05);
+}
+
+.cell.x {
+    color: #e74c3c;
+    animation: placeSymbol 0.3s ease;
+}
+
+.cell.o {
+    color: #3498db;
+    animation: placeSymbol 0.3s ease;
+}
+
+/* Animation for placing symbols */
+@keyframes placeSymbol {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #room-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    #room-input, #room-container button {
+        width: 100%;
+    }
+
+    #board {
+        grid-template-columns: repeat(15, 30px);
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Mode Container Styling */
+.mode-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.mode-container h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mode-buttons button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.mode-buttons button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.mode-buttons button:nth-child(2) {
+    background: #e67e22;
+}
+
+.mode-buttons button:nth-child(2):hover {
+    background: #d35400;
+}
+
+/* Responsive Design for Mode Container */
+@media (max-width: 600px) {
+    .mode-container {
+        padding: 20px;
+    }
+
+    .mode-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .mode-buttons button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

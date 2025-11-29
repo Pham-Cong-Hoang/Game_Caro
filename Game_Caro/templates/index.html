@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Caro Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1><span>🎮</span> Caro Online</h1>
+
+    <div id="room-container">
+        <input type="text" id="room-input" placeholder="Enter room code..." aria-label="Room code input">
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+
+    <p id="info">Welcome! Enter a room code to start.</p>
+    <p id="turn"></p>
+    <button id="restart-button" style="display: none;" onclick="restartGame()">Restart Game</button>
+    <div id="board"></div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='client.js') }}"></script>
+</body>
+</html>
