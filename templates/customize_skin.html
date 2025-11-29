@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game - Tùy chỉnh skin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='customize_skin.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="customize-skin-container">
+        <h1>Tùy chỉnh skin</h1>
+        <div class="info-box">
+            <h2>Chọn skin cho X/O</h2>
+            <p>Chọn ký hiệu cho X và O:</p>
+            <div class="skin-selector">
+                <label for="x-skin">Skin cho X:</label>
+                <select id="x-skin">
+                    <option value="X">X (Mặc định)</option>
+                    <option value="❤️">Trái tim (❤️)</option>
+                    <option value="🔥">Ngọn lửa (🔥)</option>
+                    <option value="🤖">Robot (🤖)</option>
+                    <option value="🥷">Ninja (🥷)</option>
+                </select>
+                <label for="o-skin">Skin cho O:</label>
+                <select id="o-skin">
+                    <option value="O">O (Mặc định)</option>
+                    <option value="⭐">Ngôi sao (⭐)</option>
+                    <option value="⚡">Sấm sét (⚡)</option>
+                    <option value="🌟">Ánh sáng (🌟)</option>
+                    <option value="👽">Người ngoài hành tinh (👽)</option>
+                </select>
+            </div>
+            <h2>Chọn chủ đề bàn cờ</h2>
+            <p>Chọn giao diện cho bàn cờ:</p>
+            <div class="theme-selector">
+                <select id="board-theme">
+                    <option value="classic">Cổ điển</option>
+                    <option value="tech">Công nghệ</option>
+                    <option value="jungle">Rừng rậm</option>
+                    <option value="space">Vũ trụ</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button id="save-skin">Lưu và Áp dụng</button>
+                <button onclick="window.location.href='/'">Quay lại</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='customize_skin.js') }}"></script>
+</body>
+</html>

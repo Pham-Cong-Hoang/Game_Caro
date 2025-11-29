@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Caro Online - Chơi với Máy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1><span>🎮</span> Caro Chế độ AI</h1>
+    <button class="back-button" onclick="window.location.href='/'">Quay lại Trang chủ</button>
+    <div class="difficulty-selector">
+        <label for="difficulty">Chọn mức độ khó:</label>
+        <select id="difficulty">
+            <option value="easy">Dễ</option>
+            <option value="medium" selected>Trung bình</option>
+            <option value="hard">Khó</option>
+        </select>
+    </div>
+    <p id="info">Bạn là 'X'. Bắt đầu chơi nào!</p>
+    <p id="turn">Lượt: X</p>
+    <div id="timer" class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <button id="restart-button" style="display: none;" onclick="restartGame()">Chơi lại</button>
+    <div id="board"></div>
+    <div id="loading" class="loading-spinner" style="display: none;">Đang tải...</div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='ai_client.js') }}"></script>
+</body>
+</html>

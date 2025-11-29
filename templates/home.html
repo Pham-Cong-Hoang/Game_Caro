@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Cờ Caro - Trang chủ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1> <span>🎮</span> Cờ Caro</h1>
+    <div class="mode-container">
+        <h2>Chọn chế độ chơi</h2>
+        <div class="mode-buttons">
+            <button onclick="window.location.href='/game'">Chơi với bạn</button>
+            <button onclick="window.location.href='/ai-game'">Chơi với máy</button>
+            <button onclick="window.location.href='/special-mode'">Chế độ kỹ năng đặc biệt</button>
+            <button onclick="window.location.href='/dynamic-board'">Chế độ bàn cờ động</button>
+            <button onclick="window.location.href='/multiplayer'">Chế độ nhiều người chơi</button>
+        </div>
+    </div>
+    <button class="customize-skin-btn" onclick="window.location.href='/customize-skin'" title="Tùy chỉnh giao diện">
+        👕
+    </button>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Caro Online - Chế độ bàn cờ động</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1><span>🎮</span> Caro - Chế độ bàn cờ động</h1>
+    <div id="room-container">
+        <button id="create-room-btn">Tạo Phòng Mới</button>
+        <div id="waiting-rooms">
+            <h3>Phòng Chờ</h3>
+            <ul id="room-list"></ul>
+        </div>
+        <input type="text" id="room-input" placeholder="Nhập mã phòng..." aria-label="Nhập mã phòng">
+        <button onclick="joinRoom()">Vào Phòng</button>
+        <button id="back-to-home-btn">Quay lại</button>
+    </div>
+    <div id="game-area" style="display: none;">
+        <div id="info-container">
+            <div id="info-header">
+                <span>Thông Tin</span>
+                <button id="info-toggle" onclick="toggleInfo()">−</button>
+            </div>
+            <div id="info-content">
+                <p id="info">Chào mừng! Nhập mã phòng để bắt đầu.</p>
+            </div>
+        </div>
+        <div id="board"></div>
+        <div id="loading" class="loading-spinner" style="display: none;">Đang tải...</div>
+    </div>
+    <div id="game-controls-container">
+        <div id="game-controls-header">
+            <span>Điều Khiển Trò Chơi</span>
+            <button id="game-controls-toggle" onclick="toggleGameControls()">−</button>
+        </div>
+        <div id="game-controls-content">
+            <p id="turn"></p>
+            <div id="timer" class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <button id="back-button">Quay lại Trang chủ</button>
+            <button id="pause-button">Tạm dừng</button>
+            <button id="restart-button">Chơi lại</button>
+            <button id="settings-button">Cài đặt</button>
+        </div>
+    </div>
+    <div id="chat-container">
+        <div id="chat-header">
+            <span>Trò chuyện</span>
+            <button id="chat-toggle" onclick="toggleChat()">−</button>
+        </div>
+        <div id="chat-content">
+            <div id="chat-messages"></div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." aria-label="Nhập tin nhắn trò chuyện">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span id="settings-close" class="close">×</span>
+            <h2>Cài Đặt Hộp Thông Tin</h2>
+            <label for="info-position">Vị trí:</label>
+            <select id="info-position">
+                <option value="left">Bên trái bàn cờ</option>
+                <option value="right">Bên phải bàn cờ</option>
+                <option value="top">Phía trên bàn cờ</option>
+                <option value="bottom">Phía dưới bàn cờ</option>
+            </select>
+            <label for="info-color">Màu nền:</label>
+            <input type="color" id="info-color">
+            <button id="settings-save">Lưu</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="{{ url_for('static', filename='dynamic_board_client.js') }}"></script>
+</body>
+</html>

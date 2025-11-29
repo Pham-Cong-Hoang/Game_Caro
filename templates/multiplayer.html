@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game - Chế độ 3 phe hoặc nhiều người chơi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='multiplayer.css') }}">
+</head>
+<body>
+    <div class="multiplayer-container">
+        <h1>Chế độ 3 phe hoặc nhiều người chơi</h1>
+        <div class="info-box">
+            <h2>Đang trong quá trình phát triển</h2>
+            <p>Hướng dẫn cho chế độ này:</p>
+            <ul>
+                <li><strong>Nhiều người chơi:</strong> Thay vì chỉ 2 người (X và O), hỗ trợ 3 người trở lên, ví dụ X, O, và Δ, mỗi người có ký hiệu riêng.</li>
+                <li><strong>Luật thắng:</strong> Cần 5 ký tự liên tiếp cùng loại (ngang, dọc, chéo) và không bị chặn 2 đầu bởi ký tự khác loại, đảm bảo chiến thắng rõ ràng.</li>
+            </ul>
+            <button onclick="window.location.href='/'">Quay lại</button>
+        </div>
+    </div>
+</body>
+</html>

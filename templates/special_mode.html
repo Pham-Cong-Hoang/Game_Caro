@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game - Chế độ kỹ năng đặc biệt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='special_mode.css') }}">
+</head>
+<body>
+    <div class="special-mode-container">
+        <h1>Chế độ kỹ năng đặc biệt</h1>
+        <div class="info-box">
+            <h2>Đang trong quá trình phát triển</h2>
+            <p>Hướng dẫn cho chế độ này:</p>
+            <ul>
+                <li><strong>Đánh 2 ô liên tiếp trong một lượt:</strong> Cho phép người chơi đặt hai ký hiệu ('X' hoặc 'O') trong cùng một lượt, tăng cơ hội tạo chuỗi chiến thắng.</li>
+                <li><strong>Biến một ô đối thủ thành của mình:</strong> Chọn một ô đã được đối thủ đánh và chuyển nó thành ký hiệu của bạn, thay đổi chiến lược trên bàn cờ.</li>
+                <li><strong>Bẫy “phản công”:</strong> Đặt một ô bẫy; nếu đối thủ đánh vào ô này, họ sẽ mất lượt, giúp bạn giành lợi thế.</li>
+                <li><strong>Giới hạn:</strong> Mỗi kỹ năng chỉ được sử dụng một lần mỗi trận để tăng tính chiến thuật và cân bằng trò chơi.</li>
+            </ul>
+            <button onclick="window.location.href='/'">Quay lại</button>
+        </div>
+    </div>
+</body>
+</html>
